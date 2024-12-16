@@ -25,7 +25,7 @@ ingress:
           - path: /
             pathType: Prefix
     tls:
-      - secretName: nocodb-tls
+      - secretName: vocalog-parse-test-tls
         hosts:
           - vocalog-parse-test.miku.software
 
