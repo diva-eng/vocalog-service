@@ -14,5 +14,15 @@ spec:
     namespace: vocalog-server
   syncPolicy:
     automated:
-      selfHeal: true
       prune: true
+      selfHeal: true
+    retry:
+      limit: 10
+      backoff:
+        duration: 1m
+        maxDuration: 16m
+        factor: 2
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+      - ApplyOutOfSyncOnly=true

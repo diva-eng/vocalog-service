@@ -32,6 +32,10 @@ ingress:
 mongodb:
   global:
     defaultStorageClass: azurefile-csi
+  persistence:
+    enabled: true
+    storageClass: azurefile-csi
+    size: 8Gi
   architecture: replicaset
   replicaCount: 2
   serviceAccount:
@@ -40,8 +44,8 @@ mongodb:
   rbac:
     create: true
   auth:
-  usernames:
-    - "admin"
-  databases:
-    - "parse"
-  existingSecret: mongo-password-secret
+    usernames:
+      - "admin"
+    databases:
+      - "parse"
+    existingSecret: mongo-password-secret
