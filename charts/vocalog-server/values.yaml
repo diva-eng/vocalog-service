@@ -36,8 +36,7 @@ mongodb:
     enabled: true
     storageClass: azurefile-csi
     size: 8Gi
-  architecture: replicaset
-  replicaCount: 2
+  architecture: standalone
   serviceAccount:
     create: true
   automountServiceAccountToken: true
