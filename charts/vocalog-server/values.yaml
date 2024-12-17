@@ -12,6 +12,7 @@ env:
   MASTER_KEY_IPS: 100.64.0.0/10,127.0.0.1,::1
   PARSE_DASHBOARD_ALLOW_INSECURE_HTTP: "false"
   SKIP_TURNSTILE_VALIDATION: "true"
+  ROOT_URL: https://vocalog-parse-test.miku.software
   PORT: "3000"
   APP_ID:
     valueFrom:
