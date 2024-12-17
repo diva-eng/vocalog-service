@@ -1,5 +1,6 @@
 image:
   repository: crccheck/hello-world
+  tag: latest
   pullPolicy: IfNotPresent
 
 service:
@@ -36,9 +37,11 @@ mongodb:
     enabled: true
     storageClass: azurefile-csi
     size: 8Gi
-  architecture: standalone
+  architecture: replicaset
   serviceAccount:
     create: true
+  containerSecurityContext:
+    runAsNonRoot: false
   automountServiceAccountToken: true
   rbac:
     create: true
