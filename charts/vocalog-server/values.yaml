@@ -65,16 +65,16 @@ ingress:
       traefik.ingress.kubernetes.io/router.tls: "true"
       # Enable cert-manager to create automatically the SSL certificate and store in Secret
       cert-manager.io/cluster-issuer: letsencrypt-prod-issuer
-      cert-manager.io/common-name: vocalog-parse-test.miku.software
+      cert-manager.io/common-name: vocalog-parse-preview.miku.software
     hosts:
-      - host: vocalog-parse-test.miku.software
+      - host: vocalog-parse-preview.miku.software
         paths:
           - path: /
             pathType: Prefix
     tls:
       - secretName: vocalog-parse-test-tls
         hosts:
-          - vocalog-parse-test.miku.software
+          - vocalog-parse-preview.miku.software
 
 mongodb:
   global:
