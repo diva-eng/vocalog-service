@@ -32,10 +32,10 @@ ingress:
 
 mongodb:
   global:
-    defaultStorageClass: azure-file
+    defaultStorageClass: mongodb-file
   persistence:
     enabled: true
-    storageClass: azure-file
+    storageClass: mongodb-file
     size: 8Gi
   architecture: replicaset
   serviceAccount:
