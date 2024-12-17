@@ -1,5 +1,5 @@
 image:
-  repository: crccheck/hello-world
+  repository: vocalogacr.azurecr.io/vocalog-server
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -7,7 +7,52 @@ service:
   main:
     ports:
       http:
-        port: 8000
+        port: 3000
+env:
+  MASTER_KEY_IPS: 100.64.0.0/10,127.0.0.1,::1
+  PARSE_DASHBOARD_ALLOW_INSECURE_HTTP: "false"
+  SKIP_TURNSTILE_VALIDATION: "true"
+  PORT: "3000"
+  APP_ID:
+    valueFrom:
+      secretKeyRef:
+        name: vocalog-secret
+        key: APP_ID
+  DASHBOARD_USERNAME:
+    valueFrom:
+      secretKeyRef:
+        name: vocalog-secret
+        key: DASHBOARD_USERNAME
+  DASHBOARD_PASSWORD:
+    valueFrom:
+      secretKeyRef:
+        name: vocalog-secret
+        key: DASHBOARD_PASSWORD
+  MASTER_KEY:
+    valueFrom:
+      secretKeyRef:
+        name: vocalog-secret
+        key: MASTER_KEY
+  JAVASCRIPT_KEY:
+    valueFrom:
+      secretKeyRef:
+        name: vocalog-secret
+        key: JAVASCRIPT_KEY
+  DATABASE_URI:
+    valueFrom:
+      secretKeyRef:
+        name: vocalog-secret
+        key: DATABASE_URI
+  OPENAI_API_KEY:
+    valueFrom:
+      secretKeyRef:
+        name: vocalog-secret
+        key: OPENAI_API_KEY
+  TURNSTILE_SECRET_KEY:
+    valueFrom:
+      secretKeyRef:
+        name: vocalog-secret
+        key: TURNSTILE_SECRET_KEY
 
 ingress:
   main:
