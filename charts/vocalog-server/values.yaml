@@ -9,7 +9,7 @@ service:
       http:
         port: 3000
 env:
-  MASTER_KEY_IPS: 100.64.0.0/10,127.0.0.1,::1
+  MASTER_KEY_IPS: 0.0.0.0/0,::/0
   PARSE_DASHBOARD_ALLOW_INSECURE_HTTP: "false"
   SKIP_TURNSTILE_VALIDATION: "true"
   ROOT_URL: https://vocalog-parse-test.miku.software
