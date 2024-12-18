@@ -1,6 +1,6 @@
 image:
   repository: vocalogacr.azurecr.io/vocalog-server
-  tag: latest
+  tag: v1.0
   pullPolicy: IfNotPresent
 
 service:
@@ -12,7 +12,7 @@ env:
   MASTER_KEY_IPS: 0.0.0.0/0,::/0
   PARSE_DASHBOARD_ALLOW_INSECURE_HTTP: "false"
   SKIP_TURNSTILE_VALIDATION: "true"
-  ROOT_URL: https://vocalog-parse-preview.miku.software
+  ROOT_URL: https://vocalog-parse.miku.software
   PORT: "3000"
   APP_ID:
     valueFrom:

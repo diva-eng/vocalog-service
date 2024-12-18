@@ -1,0 +1,11 @@
+name: vocalog-server
+apiVersion: v2
+appVersion: v0.106.1
+version: 0.1.0
+dependencies:
+  - name: common
+    repository: http://bjw-s.github.io/helm-charts/
+    version: 0.2.0
+  - name: mongodb
+    version: "16.4.0"
+    repository: "https://charts.bitnami.com/bitnami"
